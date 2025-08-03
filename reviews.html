@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Trust Worthy - Crypto Learning Platform</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="C:\Users\USER\Desktop\CRYPTO LEARNING\favi.icon\crypto ico.png" type="image/png">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f2f2f2;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background: #222;
+      color: white;
+      padding: 1em;
+      text-align: center;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      background: #444;
+      padding: 0.5em;
+    }
+    nav a {
+      color: white;
+      margin: 0 1em;
+      text-decoration: none;
+    }
+    .container {
+      padding: 1em;
+      max-width: 800px;
+      margin: auto;
+      background: white;
+    }
+    h2 {
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 0.5em;
+    }
+    .comment-box, .post-box {
+      margin-top: 1em;
+    }
+    textarea {
+      width: 100%;
+      padding: 0.5em;
+    }
+    button {
+      margin-top: 0.5em;
+      padding: 0.5em 1em;
+    }
+    .comments, .posts {
+      margin-top: 1em;
+    }
+    .comment, .post {
+      background: #e9e9e9;
+      padding: 0.5em;
+      margin-bottom: 0.5em;
+      border-radius: 4px;
+      position: relative;
+    }
+    .delete-btn {
+      position: absolute;
+      right: 10px;
+      top: 10px;
+      background: red;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    .rating {
+      margin-top: 1em;
+    }
+    .stars {
+      color: gold;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1> <div> Learn Crypto Safely with crypto Learning  Trust Worthy  Platform Reviews. </div>  <img src="C:\Users\USER\Desktop\CRYPTO LEARNING\favi.icon\site icon\full .png" style="width: 60px; height: 60px;" type="image/png">
+  
+     </header>
+      
+  <nav>
+    <a href="k.html">Home</a>
+    <a href="crypto ews.html">News</a>
+    <a href="enroll.html">Enroll</a>
+    
+  </nav>
+
+  <div class="container">
+    <section class="post-section">
+      <h2>Create a Post</h2>
+      <div class="post-box">
+        <textarea id="postInput" rows="3" placeholder="Share your crypto thoughts... on the following: Ebooks, Courses, and your experince with the site."></textarea>
+        <br>
+        <button onclick="addPost()">Add Post</button>
+      </div>
+      <div class="posts" id="postList"></div>
+    </section>
+
+    <section class="comment-section">
+      <h2>Leave a Comment on the following: Ebooks, Courses, and your experince with the site. </h2>
+      <div class="comment-box">
+        <textarea id="commentInput" rows="2" placeholder="Write a comment..."></textarea>
+        <br>
+        <button onclick="addComment()">Add Comment</button>
+      </div>
+      <div class="comments" id="commentList"></div>
+    </section>
+
+    <section class="review-section">
+      <h2>Rate the amazing Trust Worthy Crypto learning platform </h2>
+      <div class="rating">
+        <span class="stars" onclick="rate(1)">★</span>
+        <span class="stars" onclick="rate(2)">★</span>
+        <span class="stars" onclick="rate(3)">★</span>
+        <span class="stars" onclick="rate(4)">★</span>
+        <span class="stars" onclick="rate(5)">★</span>
+        <p id="ratingText">No rating yet.</p>
+      </div> <img src="
+  C:\Users\USER\Desktop\CRYPTO LEARNING\favi.icon\site icon\rate.png" style="width: 60px; height: 60px;" type="image/png">
+    
+    </section>
+  </div>  
+  <footer> 
+    <p>&copy; 2025 Crypto Learning Platform. All rights reserved.</p> <img src="C:\Users\USER\Desktop\CRYPTO LEARNING\favi.icon\crypto ico.png "
+   style="width: 60px; height: 60px;" type="image/png">
+      
+  </footer>
+
+  <script>
+    function addComment() {
+      const commentInput = document.getElementById("commentInput");
+      const commentList = document.getElementById("commentList");
+
+      if (commentInput.value.trim() === "") return;
+
+      const commentDiv = document.createElement("div");
+      commentDiv.className = "comment";
+      commentDiv.innerHTML = commentInput.value +
+        '<button class="delete-btn" onclick="this.parentElement.remove()">Delete</button>';
+
+      commentList.appendChild(commentDiv);
+      commentInput.value = "";
+    }
+
+    function addPost() {
+      const postInput = document.getElementById("postInput");
+      const postList = document.getElementById("postList");
+
+      if (postInput.value.trim() === "") return;
+
+      const postDiv = document.createElement("div");
+      postDiv.className = "post";
+      postDiv.innerHTML = postInput.value +
+        '<button class="delete-btn" onclick="this.parentElement.remove()">Delete</button>';
+
+      postList.appendChild(postDiv);
+      postInput.value = "";
+    }
+
+    function rate(stars) {
+      const ratingText = document.getElementById("ratingText");
+      ratingText.textContent = `You rated this site: ${stars} star${stars > 1 ? 's' : ''}.`;
+    }
+  </script>
+
+</body>
+</html>
+

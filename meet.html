@@ -1,0 +1,138 @@
+{% extends 'CRYPTO/base.html'%}
+‎<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title> {% block title %} Crypto class - join now {% endblock %}</title>
+  <link rel="icon" href="C:\Users\USER\Desktop\CRYPTO LEARNING\favi.icon\crypto ico.png" type="image/png">
+
+{% block extra_css %}
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      background: #0d1117;
+      color: #f0f6fc;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      background-color: #161b22;
+      padding: 30px;
+      border-radius: 16px;
+      text-align: center;
+      width: 90%;
+      max-width: 500px;
+      box-shadow: 0 0 20px rgba(0, 255, 100, 0.3);
+    }
+
+    .header h1 {
+      font-size: 24px;
+      color: #58a6ff;
+      margin-bottom: 10px;
+    }
+
+    .header p {
+      margin-bottom: 12px;
+      color: #8b949e;
+    }
+
+    .class-info {
+      margin: 20px 0;
+      text-align: left;
+    }
+
+    .class-info h2 {
+      color: #f0f6fc;
+      margin-bottom: 10px;
+    }
+
+    .class-info p {
+      color: #c9d1d9;
+      margin: 4px 0;
+    }
+
+    button#joinBtn {
+      background-color: #238636;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button#joinBtn:hover {
+      background-color: #2ea043;
+    }
+
+    @media (max-width: 480px) {
+      .header h1 {
+        font-size: 20px;
+      }
+
+      button#joinBtn {
+        width: 100%;
+        padding: 14px;
+      }
+    }
+  </style>
+
+{% endblock %}
+
+</head>
+<body>
+
+  <div class="container">
+    <div class="header">
+      {% block content %}
+      <h1>💻 Crypto Learning Platform Live Session</h1>
+      <p>Hosted by <strong>ITO</strong> | Crypto Learning Platform</p>
+      <p>Join our interactive class and learn how to master cryptocurrency from beginner to pro!</p>
+    <p>By clicking on the Join Class Now Below to start your journey and to track your progress in the Crypto Space!! </p> 
+    </div>
+
+    <div class="class-info">
+      <h2>Next Live Session:</h2>
+      <p>📅 Date: <span id="class-date">July 5, 2026</span></p>
+      <p>🕒 Time: <span id="class-time">3:00 PM GMT</span></p>
+      <p>📍 Location: Google Meet</p>
+    </div>
+
+    <button id="joinBtn">🔗 Join Class Now</button>
+  </div>
+
+<Nav>
+  <a href="enroll.html">ENROLL</a>
+            
+</Nav>
+{% endblock %}
+
+  <script src="{% static 'js/script.js'%}">
+  </script>
+  
+{% block extra_js %}
+    document.getElementById("joinBtn").addEventListener("click", function() {
+      const meetLink = "https://meet.google.com/nuw-kfhd-qip";
+      window.location.href = meetLink;
+    });
+  </script>
+  {% endblock %}
+  <footer> 
+    <p>&copy; 2025 Crypto Learning Platform. All rights reserved.</p> <img src="C:\Users\USER\Desktop\CRYPTO LEARNING\favi.icon\crypto ico.png "
+   style="width: 30px; height: 30px;" type="image/png">
+      
+  </footer> 
+
+</body>
+</html>
